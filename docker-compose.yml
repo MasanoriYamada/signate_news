@@ -1,0 +1,16 @@
+version: '2.3'
+
+services:
+  signate_news:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    user: root:root
+    container_name: "signate_news"
+    working_dir: "/workspace"
+    ports:
+    - "7777:7777"
+    #runtime: nvidia
+    volumes:
+    - .:/workspace
+    tty: true
